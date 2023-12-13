@@ -1,4 +1,4 @@
-from .models import Usuario, Doctor
+from .models import  Doctor, Usuario
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth import login as auth_login
@@ -92,6 +92,16 @@ def forms(request):
             return redirect('inicio')  # Reemplaza 'exito' con el nombre de la URL de tu página de éxito
     else:
         formulario = usuariosform()
-        messages.success(request,'cita no creada')
+        messages.success(request,'cita no creada, 1')
     
     return render(request, 'form.html', {'formulario': formulario})
+
+def cita_list(request):
+ 
+    usuarios = Usuario.objects.all()
+    print(usuarios)
+    return render(request, 'cita_list.html', {'usuarios': usuarios})
+    
+    
+
+

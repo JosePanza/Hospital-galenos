@@ -46,6 +46,9 @@
                   <li class="navbar-nav">
                     <a class="nav-link">¡Bienvenido, {{ user.username }}!</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cita_list' %}">citas</a>
+                  </li>
                 </div>
               {% else %}
                 <div class="navbar-nav ms-auto">
@@ -54,9 +57,6 @@
                   </li> 
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'registro' %}">Registro</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'forms' %}">form</a>
                   </li>
                 </div>     
               {% endif %}

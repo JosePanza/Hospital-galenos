@@ -15,8 +15,7 @@
     <form method="post" action="{% url 'forms' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <br></br>
-        <label for="ID_usuario">ID artista:</label>
-        <input type="text" name="ID_usuario" required><br></br>
+       
         <label for="nombre_usuario">Nombre Artista:</label>
         <input type="text" name="nombre_usuario" required><br></br>
         <label for="descripcion">Descripcion:</label>

@@ -4,7 +4,7 @@ from .models import Usuario
 
 class usuariosform(forms.ModelForm):
     class Meta:
-        model = Usuario 
-        #fields = ['ID_usuario', 'nombre_usuario', 'descripcion', 'img'] 
+        model = Usuario
+        #fields = ['user,'ID_usuario', 'nombre_usuario', 'descripcion', 'img'] 
    
         fields = '__all__' 

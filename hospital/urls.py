@@ -15,5 +15,6 @@ urlpatterns = [
     path('registro/', views.registro_view, name='registro'),
     path('accounts/profile/', views.profile_view, name='profile'),
     #test
-    path('forms/', views.forms, name='forms')
+    path('forms/', views.forms, name='forms'),
+    path('cita_list/', views.cita_list, name='cita_list')
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
