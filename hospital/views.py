@@ -1,4 +1,4 @@
-from .models import  Doctor, Usuario
+from .models import  Doctor, Usuario, Appointment
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth import login as auth_login
@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.db import IntegrityError
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 
 @login_required
@@ -82,7 +82,7 @@ def logout_view(request):
     logout(request)
     return redirect('inicio')
 
-#test
+#forms es para agregar cotas basicamente
 def forms(request):
     if request.method == 'POST':
         formulario = usuariosform(request.POST, request.FILES)
@@ -95,6 +95,16 @@ def forms(request):
         messages.success(request,'cita no creada, 1')
     
     return render(request, 'form.html', {'formulario': formulario})
+
+def eliminar_cita(request, cita_id):
+    cita = get_object_or_404(Usuario, ID_usuario=cita_id)
+
+    if request.method == 'POST':
+        cita.delete()
+        messages.success(request, '¡Cita eliminada correctamente!')
+        return redirect('inicio')  # Reemplaza 'inicio' con tu URL de inicio
+
+    return render(request, 'eliminar_cita.html', {'cita': cita})
 
 def cita_list(request):
  

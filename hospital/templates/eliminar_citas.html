@@ -1,0 +1,22 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %} eliminar {% endblock %}
+
+{% block body %}
+
+
+
+<h1>Eliminar cita</h1>
+<p>¿Estás seguro de que deseas eliminar esta cita ?</p>
+<p>ID Usuario:{{ usuario.ID_usuario }}
+<input type="text" name="ID_usuario" required><br></br>
+
+
+
+<form action="{% url 'formulariodelete' %}" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="ID_usuario" value="{{ ID_usuario }}">
+ 
+  <button type="submit" class="btn btn-primary">Eliminar</button>
+</form>
+{% endblock %}

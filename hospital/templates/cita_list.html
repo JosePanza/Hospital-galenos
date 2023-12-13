@@ -1,45 +1,43 @@
 {% extends "./base.html" %}
 
-
-{% block title %}Lista {% endblock %}
-
 {% block body %}
 {% load static %}
 
 <!DOCTYPE html>
-<br>
+<html>
 <head>
     <title>Lista de artistas</title>
 </head>
-
+<body>
 
 <table class="table table-striped" style="background-color: rgb(255, 255, 255);">
     <thead>
-      <tr>
-        <th>user</th>
-        <th>ID</th>
-        <th>Nombre Artista</th>
-        <th>descripcion</th>
-        <th>img</th>
-      </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Paciente</th>
+            <th>Nombre Doctor</th>
+            <th>Fecha y Hora</th>
+            <th>Acciones</th>
+        </tr>
     </thead>
     <tbody>
-      {% for usuario in usuarios %}
-      <tr>
-        <td>{{ usuario.user }}</td>
-        <td>{{ usuario.ID_usuario }}</td>
-        <td>{{ usuario.nombre_usuario }}</td>
-        <td>{{ usuario.descripcion }}</td>
-        <td>{{ img }}</td>
-         </tr>
-      {% endfor %}
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.ID_usuario }}</td>
+            <td>{{ usuario.nombre_usuario }}</td>
+            <td>{{ usuario.descripcion }}</td>
+            <td>{{ usuario.img }}</td>
+            <td>
+                <a href="{% url 'eliminar_cita' usuario.ID_usuario %}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
     </tbody>
-  </table>
-  
+</table>
 
-   <a href="{% url 'forms'%}" class="btn btn-primary">Agregar</a>
-<br></br>
+<a href="{% url 'forms' %}" class="btn btn-primary">Agregar</a>
+    
 </body>
 </html>
 
-{% endblock  %}
+{% endblock %}

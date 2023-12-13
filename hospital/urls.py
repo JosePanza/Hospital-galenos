@@ -16,5 +16,7 @@ urlpatterns = [
     path('accounts/profile/', views.profile_view, name='profile'),
     #test
     path('forms/', views.forms, name='forms'),
-    path('cita_list/', views.cita_list, name='cita_list')
+    path('cita_list/', views.cita_list, name='cita_list'),
+    path('eliminar_cita/<int:cita_id>/', views.eliminar_cita, name='eliminar_cita'),
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
