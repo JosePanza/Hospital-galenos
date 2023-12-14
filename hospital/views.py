@@ -97,7 +97,7 @@ def forms(request):
     return render(request, 'form.html', {'formulario': formulario})
 
 def eliminar_cita(request, cita_id):
-    cita = get_object_or_404(Usuario, ID_usuario=cita_id)
+    cita = get_object_or_404(Usuario, nombre_paciente=cita_id)
 
     if request.method == 'POST':
         cita.delete()

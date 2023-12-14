@@ -22,11 +22,10 @@ class Appointment(models.Model):
 #me olvide cambiarlos pero Usuario vendria a representar Citas, perdon :C
 class Usuario(models.Model):
     
-    ID_usuario       =  models.AutoField( primary_key=True, db_column='id')
-    nombre_usuario   =  models.CharField(max_length=30, blank=False, null=False)
-    descripcion      =  models.CharField(max_length=50, blank=False, null=False)
-    img              =  models.FileField(upload_to='img/', null=False, blank=False, verbose_name='img')
+    nombre_paciente       =  models.AutoField( primary_key=True, db_column='id')
+    nombre_doc  =  models.CharField(max_length=30, blank=False, null=False)
+    fechayhora     =  models.CharField(max_length=50, blank=False, null=False)
 
 
     def __str__(self):
-        return str(self.ID_usuario)
+        return str(self.nombre_paciente)

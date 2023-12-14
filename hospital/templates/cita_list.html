@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista de artistas</title>
+    <title>Lista de citas:</title>
 </head>
 <body>
 
@@ -23,12 +23,11 @@
     <tbody>
         {% for usuario in usuarios %}
         <tr>
-            <td>{{ usuario.ID_usuario }}</td>
-            <td>{{ usuario.nombre_usuario }}</td>
-            <td>{{ usuario.descripcion }}</td>
-            <td>{{ usuario.img }}</td>
+            <td>{{ usuario.nombre_paciente }}</td>
+            <td>{{ usuario.nombre_doc }}</td>
+            <td>{{ fechayhora }}</td>
             <td>
-                <a href="{% url 'eliminar_cita' usuario.ID_usuario %}" class="btn btn-danger">Eliminar</a>
+                <a href="{% url 'eliminar_cita' usuario.nombre_paciente %}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         {% endfor %}

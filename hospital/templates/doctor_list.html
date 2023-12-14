@@ -2,20 +2,42 @@
 
 {% block body %}
 
-<h1>Doctores</h1>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Doctor Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctores y Especializaciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .doctor {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>detalles</h1>
-    <div>
-        <h2>{{ doctor.name }}</h2>
-        <p>Specialization: {{ doctor.specialization }}</p>
-        <!-- Agrega más campos según sea necesario -->
+
+    <div class="doctor">
+        <h2>Dr. Juan Pérez</h2>
+        <p>Especialización: Cardiología</p>
     </div>
+
+    <div class="doctor">
+        <h2>Dra. María González</h2>
+        <p>Especialización: Pediatría</p>
+    </div>
+
+    <div class="doctor">
+        <h2>Dr. Carlos Rodríguez</h2>
+        <p>Especialización: Cirugía General</p>
+    </div>
+
 </body>
 </html>
+
 {% endblock %}
